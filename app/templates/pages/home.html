@@ -1,11 +1,24 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}<!-- -->
 
-<div class="grid w-full place-items-center min-h-screen">
-  <div hx-boost="true" class="flex flex-col w-1/2 lg:flex-row">
-    <div class="grid flex-grow h-32 card bg-base-300 rounded-box place-items-center">
-         <p>Start Building Your App Here</p>
+{% block content %}<!-- -->
+
+{% include './partials/top_bar.html' %}
+
+<div class="z-0 flex flex-row mx-2 gap-2 min-h-[600px]">
+  <div class="flex-auto p-0">
+    <div class="flex flex-row gap-2 min-h-[600px]">
+      <div id="tree_nav" class="p-3 min-w-[250px] rounded-lg shadow">
+        {% include './partials/tree_nav.html' %}
+      </div>
+      <div id="main_content" class="flex-auto p-5 rounded-lg shadow">
+        {% include './partials/breadcrumbs.html' %}
+      </div>
     </div>
-    <div class="divider lg:divider-horizontal">OR</div>
   </div>
 </div>
-{% endblock content %}
+
+{% include './partials/status_bar.html' %}<!---->
+
+{% include './partials/side_bar.html'%}<!---->
+
+{%endblock content %}
