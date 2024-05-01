@@ -2,23 +2,24 @@
 
 {% block content %}<!-- -->
 
-{% include './partials/top_bar.html' %}
-
-<div class="z-0 flex flex-row mx-2 gap-2 min-h-[600px]">
+<div class="z-50">{% include './partials/top_bar.html' %}</div>
+<div class="z-30 flex flex-row mx-2 gap-2">
   <div class="flex-auto p-0">
-    <div class="flex flex-row gap-2 min-h-[600px]">
+    <div class="flex flex-row gap-2">
       <div id="tree_nav" class="p-3 min-w-[250px] rounded-lg shadow">
         {% include './partials/tree_nav.html' %}
       </div>
       <div id="main_content" class="flex-auto p-5 rounded-lg shadow">
         {% include './partials/breadcrumbs.html' %}
+        <div class="flex flex-row gap-4">
+          {% include'./partials/item_card.html' %} {% include
+          './partials/item_card.html' %}
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-{% include './partials/status_bar.html' %}<!---->
-
+<div class="z-40">{% include './partials/status_bar.html' %}<!----></div>
 {% include './partials/side_bar.html'%}<!---->
 
 {%endblock content %}
